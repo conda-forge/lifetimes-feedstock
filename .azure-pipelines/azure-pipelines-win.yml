@@ -93,11 +93,11 @@ jobs:
 
     - script: |
         call activate base
+        set "PYTHONIOENCODING=utf8"
         conda.exe build "recipe" -m .ci_support\%CONFIG%.yaml
       displayName: Build recipe
       env:
         PYTHONUNBUFFERED: 1
-        PYTHONIOENCODING: utf8
       condition: not(contains(variables['CONFIG'], 'vs2008'))
     - script: |
         set "FEEDSTOCK_NAME=%BUILD_REPOSITORY_NAME:*/=%"
