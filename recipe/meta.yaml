@@ -1,17 +1,17 @@
 {% set name = "Lifetimes" %}
-{% set version = "0.11.1" %}
+{% set version = "0.11.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 75862d86581e75f0c235d830590bea0a9062222f2c9c390949f6432a3fa329b4
+  sha256: 96c251e235db1efe23c49593e437431ad301ca7de6fcd909ebae19f3ea50247b
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  number: 0
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
