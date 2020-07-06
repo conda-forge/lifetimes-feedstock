@@ -5,7 +5,7 @@ Home: https://github.com/CamDavidsonPilon/lifetimes
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Measure customer lifetime value in Python
 
