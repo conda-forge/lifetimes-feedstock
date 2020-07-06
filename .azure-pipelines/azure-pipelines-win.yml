@@ -97,6 +97,7 @@ jobs:
       displayName: Build recipe
       env:
         PYTHONUNBUFFERED: 1
+        PYTHONIOENCODING: utf8
       condition: not(contains(variables['CONFIG'], 'vs2008'))
     - script: |
         set "FEEDSTOCK_NAME=%BUILD_REPOSITORY_NAME:*/=%"
