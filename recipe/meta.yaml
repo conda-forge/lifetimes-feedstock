@@ -7,20 +7,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Lifetimes-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/Lifetimes-{{ version }}.tar.gz
   sha256: 15af22b130ed0cc6148d8ae4eb9b0f9c8c9bc9c952dd4ce68a1da0bc4c80c712
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - autograd >=1.2.0
     - dill >=0.2.6
     - numpy >=1.10.0
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/CamDavidsonPilon/lifetimes
